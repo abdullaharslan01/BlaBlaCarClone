@@ -11,6 +11,9 @@ enum Images {
     
     enum Assets {
         static let logo = "logo"
+        static let appBanner = "appBanner"
     }
+    
+    
     
 }

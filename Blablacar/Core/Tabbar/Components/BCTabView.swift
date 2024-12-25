@@ -19,11 +19,7 @@ struct BCTabView: View {
                     
             ForEach(Tab.allCases, id: \.tabName) { tab in
                 tabItem(tab)
-                    .onTapGesture {
-                        withAnimation {
-                            selectedTab = tab
-                        }
-                    }
+                   
             }
         }
         .padding(.top, 10)
@@ -31,7 +27,7 @@ struct BCTabView: View {
             Rectangle()
                 .fill(.gray.opacity(0.3))
                 .frame(height: 1)
-        }.padding(.bottom, getSafeArea().bottom == 0 ? 5 : getSafeArea().bottom - 15)
+        }.padding(.bottom, getSafeArea().bottom == 0 ? 5 : getSafeArea().bottom - 20)
             
     }
     
@@ -60,6 +56,11 @@ struct BCTabView: View {
             tabText
         }.foregroundStyle(selectedTab == tab ? .primary0 : .gray.opacity(0.6))
             .frame(maxWidth: .infinity)
+            .onTapGesture {
+                withAnimation {
+                    selectedTab = tab
+                }
+            }
         
     }
     
