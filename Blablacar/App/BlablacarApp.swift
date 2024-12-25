@@ -11,7 +11,7 @@ import SwiftUI
 struct BlablacarApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }

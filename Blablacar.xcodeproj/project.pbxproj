@@ -6,14 +6,75 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F59C48592D1C807000CB2720 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C48582D1C807000CB2720 /* UIView+Ext.swift */; };
+		F5AE39E42D1C6A8200351550 /* BlablacarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE39D32D1C6A8200351550 /* BlablacarApp.swift */; };
+		F5AE39E62D1C6A8200351550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5AE39D52D1C6A8200351550 /* Assets.xcassets */; };
+		F5AE39E72D1C6A8200351550 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5AE39E02D1C6A8200351550 /* Preview Assets.xcassets */; };
+		F5AE39F22D1C6AEA00351550 /* MainTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE39F12D1C6AEA00351550 /* MainTabbarView.swift */; };
+		F5AE39F42D1C6AF000351550 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE39F32D1C6AF000351550 /* SearchView.swift */; };
+		F5AE39F62D1C6AF500351550 /* PublishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE39F52D1C6AF500351550 /* PublishView.swift */; };
+		F5AE39F82D1C6AFB00351550 /* RidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE39F72D1C6AFB00351550 /* RidesView.swift */; };
+		F5AE39FA2D1C6B0100351550 /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE39F92D1C6B0100351550 /* InboxView.swift */; };
+		F5AE39FC2D1C6B0600351550 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE39FB2D1C6B0600351550 /* ProfileView.swift */; };
+		F5AE3A062D1C749D00351550 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE3A052D1C749D00351550 /* Tab.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		F59C48582D1C807000CB2720 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		F5AE39B72D1C5F4E00351550 /* Blablacar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blablacar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5AE39D32D1C6A8200351550 /* BlablacarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlablacarApp.swift; sourceTree = "<group>"; };
+		F5AE39D52D1C6A8200351550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5AE39E02D1C6A8200351550 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F5AE39F12D1C6AEA00351550 /* MainTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarView.swift; sourceTree = "<group>"; };
+		F5AE39F32D1C6AF000351550 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		F5AE39F52D1C6AF500351550 /* PublishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishView.swift; sourceTree = "<group>"; };
+		F5AE39F72D1C6AFB00351550 /* RidesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesView.swift; sourceTree = "<group>"; };
+		F5AE39F92D1C6B0100351550 /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
+		F5AE39FB2D1C6B0600351550 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F5AE3A052D1C749D00351550 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		F5AE3A0B2D1C78A500351550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		F5AE39B92D1C5F4E00351550 /* Blablacar */ = {
+		F59C485A2D1C85FE00CB2720 /* View */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Blablacar;
+			path = View;
+			sourceTree = "<group>";
+		};
+		F59C485B2D1C860500CB2720 /* Components */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F59C485C2D1C860C00CB2720 /* ViewModel */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F5AE39EA2D1C6AAF00351550 /* ViewModel */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F5AE39EB2D1C6AB200351550 /* View */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = View;
+			sourceTree = "<group>";
+		};
+		F5AE39EE2D1C6ACE00351550 /* Comman */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Comman;
+			sourceTree = "<group>";
+		};
+		F5AE39FD2D1C6B9100351550 /* Enums */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		F5AE3A022D1C71D300351550 /* Components */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +93,7 @@
 		F5AE39AE2D1C5F4E00351550 = {
 			isa = PBXGroup;
 			children = (
-				F5AE39B92D1C5F4E00351550 /* Blablacar */,
+				F5AE39E32D1C6A8200351550 /* Blablacar */,
 				F5AE39B82D1C5F4E00351550 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +104,145 @@
 				F5AE39B72D1C5F4E00351550 /* Blablacar.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F5AE39D42D1C6A8200351550 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F5AE39D32D1C6A8200351550 /* BlablacarApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F5AE39D62D1C6A8200351550 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F5AE39D52D1C6A8200351550 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		F5AE39D72D1C6A8200351550 /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				F5AE39F92D1C6B0100351550 /* InboxView.swift */,
+			);
+			path = Inbox;
+			sourceTree = "<group>";
+		};
+		F5AE39D82D1C6A8200351550 /* RidesView */ = {
+			isa = PBXGroup;
+			children = (
+				F5AE39F72D1C6AFB00351550 /* RidesView.swift */,
+			);
+			path = RidesView;
+			sourceTree = "<group>";
+		};
+		F5AE39D92D1C6A8200351550 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F5AE39FB2D1C6B0600351550 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		F5AE39DA2D1C6A8200351550 /* Publish */ = {
+			isa = PBXGroup;
+			children = (
+				F5AE39F52D1C6AF500351550 /* PublishView.swift */,
+			);
+			path = Publish;
+			sourceTree = "<group>";
+		};
+		F5AE39DB2D1C6A8200351550 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				F5AE3A022D1C71D300351550 /* Components */,
+				F5AE39EB2D1C6AB200351550 /* View */,
+				F5AE39EA2D1C6AAF00351550 /* ViewModel */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		F5AE39DC2D1C6A8200351550 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F5AE39F32D1C6AF000351550 /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		F5AE39DD2D1C6A8200351550 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F5AE39DB2D1C6A8200351550 /* Root */,
+				F5AE39E92D1C6A9100351550 /* Tabbar */,
+				F5AE39DC2D1C6A8200351550 /* Search */,
+				F5AE39DA2D1C6A8200351550 /* Publish */,
+				F5AE39D82D1C6A8200351550 /* RidesView */,
+				F5AE39D72D1C6A8200351550 /* Inbox */,
+				F5AE39D92D1C6A8200351550 /* Profile */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F5AE39DE2D1C6A8200351550 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F59C48582D1C807000CB2720 /* UIView+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F5AE39DF2D1C6A8200351550 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F5AE3A052D1C749D00351550 /* Tab.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F5AE39E12D1C6A8200351550 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F5AE39E02D1C6A8200351550 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F5AE39E32D1C6A8200351550 /* Blablacar */ = {
+			isa = PBXGroup;
+			children = (
+				F5AE3A0B2D1C78A500351550 /* Info.plist */,
+				F5AE39D42D1C6A8200351550 /* App */,
+				F5AE39DD2D1C6A8200351550 /* Core */,
+				F5AE39DE2D1C6A8200351550 /* Extensions */,
+				F5AE39DF2D1C6A8200351550 /* Models */,
+				F5AE39ED2D1C6ACA00351550 /* Utils */,
+				F5AE39D62D1C6A8200351550 /* Assets */,
+				F5AE39E12D1C6A8200351550 /* Preview Content */,
+			);
+			path = Blablacar;
+			sourceTree = "<group>";
+		};
+		F5AE39E92D1C6A9100351550 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				F59C485C2D1C860C00CB2720 /* ViewModel */,
+				F59C485B2D1C860500CB2720 /* Components */,
+				F59C485A2D1C85FE00CB2720 /* View */,
+				F5AE39F12D1C6AEA00351550 /* MainTabbarView.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		F5AE39ED2D1C6ACA00351550 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F5AE39FD2D1C6B9100351550 /* Enums */,
+				F5AE39EE2D1C6ACE00351550 /* Comman */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -61,7 +261,14 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				F5AE39B92D1C5F4E00351550 /* Blablacar */,
+				F59C485A2D1C85FE00CB2720 /* View */,
+				F59C485B2D1C860500CB2720 /* Components */,
+				F59C485C2D1C860C00CB2720 /* ViewModel */,
+				F5AE39EA2D1C6AAF00351550 /* ViewModel */,
+				F5AE39EB2D1C6AB200351550 /* View */,
+				F5AE39EE2D1C6ACE00351550 /* Comman */,
+				F5AE39FD2D1C6B9100351550 /* Enums */,
+				F5AE3A022D1C71D300351550 /* Components */,
 			);
 			name = Blablacar;
 			packageProductDependencies = (
@@ -109,6 +316,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5AE39E62D1C6A8200351550 /* Assets.xcassets in Resources */,
+				F5AE39E72D1C6A8200351550 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +328,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5AE39F42D1C6AF000351550 /* SearchView.swift in Sources */,
+				F59C48592D1C807000CB2720 /* UIView+Ext.swift in Sources */,
+				F5AE39FC2D1C6B0600351550 /* ProfileView.swift in Sources */,
+				F5AE3A062D1C749D00351550 /* Tab.swift in Sources */,
+				F5AE39F82D1C6AFB00351550 /* RidesView.swift in Sources */,
+				F5AE39E42D1C6A8200351550 /* BlablacarApp.swift in Sources */,
+				F5AE39F62D1C6AF500351550 /* PublishView.swift in Sources */,
+				F5AE39FA2D1C6B0100351550 /* InboxView.swift in Sources */,
+				F5AE39F22D1C6AEA00351550 /* MainTabbarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,9 +473,9 @@
 				DEVELOPMENT_TEAM = T89868475G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Blablacar/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -284,9 +502,9 @@
 				DEVELOPMENT_TEAM = T89868475G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Blablacar/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
