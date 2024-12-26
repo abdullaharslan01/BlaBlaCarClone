@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State var vm = SearchViewModel()
+    
     var body: some View {
         ScrollView {
             
@@ -19,29 +21,29 @@ struct SearchView: View {
                     
                     titleText
                     
-                    VStack(spacing: 20) {
-                        SearchItemView(title: ConstantStrigns.Search.leavingFrom, symbolName: nil)
-                        Divider()
-                        SearchItemView(title: ConstantStrigns.Search.goingto, symbolName: nil)
-                        Divider()
-                        SearchItemView(title: ConstantStrigns.Search.today, symbolName: "calendar")
-                        Divider()
-                        SearchItemView(title: "1", symbolName: "person")
-                        Button {} label: {
-                            Text("Ara")
-                                .foregroundStyle(.white)
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 55)
-                                .background(.splash)
-                        }
-                    }
-                    .padding(.top, 10)
-                    .background(Color(.systemGray6))
-                    .clipShape(.rect(cornerRadius: 16))
-                    .padding(.horizontal, 20)
-                    .padding(.top, 80)
+                    locationPreferanceView
                     
+                    VStack {
+                        ForEach(vm.historyJourneys) { journey in
+                                            
+                            HStack {
+                                                    
+                                Image(systemName: "clock")
+                                Text(journey.description())
+                                    .font(.callout)
+                                    .fontWeight(.medium)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .foregroundStyle(.white)
+                                Image(systemName:"chevron.right")
+                                                    
+                            }.padding(.top)
+                                .foregroundStyle((Color(.systemGray2)))
+                                                
+                        }
+                    }.padding(.top, 20)
+                   
                 }.padding(.top, getSafeArea().top + 15)
+                    .padding(.horizontal, 20)
                 
             }
             
@@ -71,17 +73,50 @@ extension SearchView {
             .fontWeight(.semibold)
         
     }
+    
+    var locationPreferanceView: some View {
+        VStack(spacing: 20) {
+            SearchItemView(title: ConstantStrigns.Search.leavingFrom, symbolName: nil) {}.overlay(alignment: .trailing) {
+                Image(systemName: "arrow.up.arrow.down")
+                    .padding(.trailing)
+                    .foregroundStyle(.primary0)
+                    .fontWeight(.light)
+            }
+                                
+            Divider().padding(.horizontal)
+                               
+            SearchItemView(title: ConstantStrigns.Search.goingto, symbolName: nil) {}
+            Divider().padding(.horizontal)
+
+            SearchItemView(title: ConstantStrigns.Search.today, symbolName: "calendar", color: .white) {}
+            Divider().padding(.horizontal)
+            SearchItemView(title: "1", symbolName: "person") {}
+            Button {} label: {
+                Text("Ara")
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .background(.splash)
+            }
+        }
+        .padding(.top, 10)
+        .background(Color(.systemGray5))
+        .clipShape(.rect(cornerRadius: 16))
+        .padding(.top, 80)
+    }
 }
 
 struct SearchItemView: View {
     @State var title: String
     let symbolName: String?
-    let color: Color
+    let labelColor: Color
+    var onTapGesture: ()->()
     
-    init(title: String, symbolName: String?, color: Color = Color.gray) {
+    init(title: String, symbolName: String?, color: Color = Color.gray, onTapGesture: @escaping ()->()) {
         self.title = title
         self.symbolName = symbolName
-        self.color = color
+        self.labelColor = color
+        self.onTapGesture = onTapGesture
     }
      
     var body: some View {
@@ -100,12 +135,15 @@ struct SearchItemView: View {
             
             Text("\(title)")
                 .font(.footnote)
-                .foregroundStyle(color)
+                .foregroundStyle(labelColor)
                 .fontWeight(.semibold)
                 
         }
         .padding([.horizontal, .top])
         .frame(maxWidth: .infinity, alignment: .leading)
+        .onTapGesture {
+            onTapGesture()
+        }
     }
 }
 

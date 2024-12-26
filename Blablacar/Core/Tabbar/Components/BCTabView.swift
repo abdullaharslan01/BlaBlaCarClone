@@ -27,7 +27,7 @@ struct BCTabView: View {
             Rectangle()
                 .fill(.gray.opacity(0.3))
                 .frame(height: 1)
-        }.padding(.bottom, getSafeArea().bottom == 0 ? 5 : getSafeArea().bottom - 20)
+        }.padding(.bottom, getSafeArea().bottom == 0 ? 5 : getSafeArea().bottom)
             
     }
     

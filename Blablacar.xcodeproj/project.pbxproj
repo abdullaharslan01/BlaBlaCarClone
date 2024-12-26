@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F59C48592D1C807000CB2720 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C48582D1C807000CB2720 /* UIView+Ext.swift */; };
+		F5A580782D1DAF84007C8023 /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A580772D1DAF84007C8023 /* Journey.swift */; };
 		F5AE39E42D1C6A8200351550 /* BlablacarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE39D32D1C6A8200351550 /* BlablacarApp.swift */; };
 		F5AE39E62D1C6A8200351550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5AE39D52D1C6A8200351550 /* Assets.xcassets */; };
 		F5AE39E72D1C6A8200351550 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5AE39E02D1C6A8200351550 /* Preview Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		F59C48582D1C807000CB2720 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		F5A580772D1DAF84007C8023 /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
 		F5AE39B72D1C5F4E00351550 /* Blablacar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blablacar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5AE39D32D1C6A8200351550 /* BlablacarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlablacarApp.swift; sourceTree = "<group>"; };
 		F5AE39D52D1C6A8200351550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,6 +33,16 @@
 		F5AE3A052D1C749D00351550 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		F5AE3A0B2D1C78A500351550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F5A5807C2D1DAFA0007C8023 /* Exceptions for "Service" folder in "Blablacar" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				BlaBlaDataService.swift,
+			);
+			target = F5AE39B62D1C5F4E00351550 /* Blablacar */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F59C485A2D1C85FE00CB2720 /* View */ = {
@@ -61,6 +73,14 @@
 		F59C48632D1C869300CB2720 /* Components */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Components;
+			sourceTree = "<group>";
+		};
+		F5A580792D1DAF98007C8023 /* Service */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F5A5807C2D1DAFA0007C8023 /* Exceptions for "Service" folder in "Blablacar" target */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		F5AE39EA2D1C6AAF00351550 /* ViewModel */ = {
@@ -211,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				F5AE3A052D1C749D00351550 /* Tab.swift */,
+				F5A580772D1DAF84007C8023 /* Journey.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,6 +247,7 @@
 		F5AE39E32D1C6A8200351550 /* Blablacar */ = {
 			isa = PBXGroup;
 			children = (
+				F5A580792D1DAF98007C8023 /* Service */,
 				F5AE3A0B2D1C78A500351550 /* Info.plist */,
 				F5AE39D42D1C6A8200351550 /* App */,
 				F5AE39DD2D1C6A8200351550 /* Core */,
@@ -344,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F59C48592D1C807000CB2720 /* UIView+Ext.swift in Sources */,
+				F5A580782D1DAF84007C8023 /* Journey.swift in Sources */,
 				F5AE39FC2D1C6B0600351550 /* ProfileView.swift in Sources */,
 				F5AE3A062D1C749D00351550 /* Tab.swift in Sources */,
 				F5AE39F82D1C6AFB00351550 /* RidesView.swift in Sources */,
