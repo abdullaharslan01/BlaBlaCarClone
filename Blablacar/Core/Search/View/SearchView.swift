@@ -34,10 +34,10 @@ struct SearchView: View {
                                     .fontWeight(.medium)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .foregroundStyle(.white)
-                                Image(systemName:"chevron.right")
+                                Image(systemName: "chevron.right")
                                                     
                             }.padding(.top)
-                                .foregroundStyle((Color(.systemGray2)))
+                                .foregroundStyle(Color(.systemGray2))
                                                 
                         }
                     }.padding(.top, 20)
@@ -47,7 +47,13 @@ struct SearchView: View {
                 
             }
             
-        }.ignoresSafeArea()
+        }
+        .fullScreenCover(isPresented: $vm.isNumberOfSeatsToBookScreenState) {
+            SelectSeatView(numberofSeatsToBook: $vm.currentJourneyBooking.numberOfSeatsToBook.wrappedValue) { selectedSeatNumber in
+                vm.changeNumberOfSeatsNumber(selectedSeatNumber)
+            }
+        }
+        .ignoresSafeArea()
     }
 }
 
@@ -75,8 +81,8 @@ extension SearchView {
     }
     
     var locationPreferanceView: some View {
-        VStack(spacing: 20) {
-            SearchItemView(title: ConstantStrigns.Search.leavingFrom, symbolName: nil) {}.overlay(alignment: .trailing) {
+        VStack(spacing: 10) {
+            SearchItemView(title: $vm.currentJourneyBooking.journey.departure, symbolName: nil).overlay(alignment: .trailing) {
                 Image(systemName: "arrow.up.arrow.down")
                     .padding(.trailing)
                     .foregroundStyle(.primary0)
@@ -85,12 +91,18 @@ extension SearchView {
                                 
             Divider().padding(.horizontal)
                                
-            SearchItemView(title: ConstantStrigns.Search.goingto, symbolName: nil) {}
+            SearchItemView(title: $vm.currentJourneyBooking.journey.destination, symbolName: nil)
             Divider().padding(.horizontal)
 
-            SearchItemView(title: ConstantStrigns.Search.today, symbolName: "calendar", color: .white) {}
+            SearchItemView(title: $vm.currentJourneyBooking.dateDescription, symbolName: "calendar")
+                
             Divider().padding(.horizontal)
-            SearchItemView(title: "1", symbolName: "person") {}
+            SearchItemView(title: $vm.currentJourneyBooking.numberOfSeatsDescription , symbolName: "person")
+                .onTapGesture {
+                    withAnimation {
+                        vm.isNumberOfSeatsToBookScreenState.toggle()
+                    }
+                }
             Button {} label: {
                 Text("Ara")
                     .foregroundStyle(.white)
@@ -103,47 +115,6 @@ extension SearchView {
         .background(Color(.systemGray5))
         .clipShape(.rect(cornerRadius: 16))
         .padding(.top, 80)
-    }
-}
-
-struct SearchItemView: View {
-    @State var title: String
-    let symbolName: String?
-    let labelColor: Color
-    var onTapGesture: ()->()
-    
-    init(title: String, symbolName: String?, color: Color = Color.gray, onTapGesture: @escaping ()->()) {
-        self.title = title
-        self.symbolName = symbolName
-        self.labelColor = color
-        self.onTapGesture = onTapGesture
-    }
-     
-    var body: some View {
-        HStack(spacing: 10) {
-            
-            ZStack {
-                if let symbolName {
-                    Image(systemName: symbolName)
-                        .foregroundStyle(Color.gray)
-                } else {
-                    Circle()
-                        .stroke(Color.gray, lineWidth: 4)
-                        .frame(width: 15, height: 15)
-                }
-            }
-            
-            Text("\(title)")
-                .font(.footnote)
-                .foregroundStyle(labelColor)
-                .fontWeight(.semibold)
-                
-        }
-        .padding([.horizontal, .top])
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .onTapGesture {
-            onTapGesture()
-        }
     }
 }
 

@@ -14,6 +14,11 @@ struct ConstantStrigns {
         static let leavingFrom = "Leaving from"
         static let goingto = "Going to"
         static let today = "Today"
-        
+        static let numberOfSeatsToBook = "Number of seats to book"
+    
+    }
+    
+    struct General {
+        static let confirm = "Confirm"
     }
 }

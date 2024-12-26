@@ -9,9 +9,9 @@ import Foundation
 
 struct Journey: Identifiable {
     var id = UUID().uuidString
-    let departure: String
-    let destination: String
-    
+    var departure: String = ConstantStrigns.Search.leavingFrom
+    var destination: String = ConstantStrigns.Search.goingto
+
     func description() -> String {
         return "\(departure) -> \(destination)"
     }
