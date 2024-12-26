@@ -53,20 +53,20 @@ struct SelectLocationView: View {
                     EmptyView()
                         .frame(width: 15)
                 }
-            }.padding(.bottom)
+            }.padding([.top,.bottom])
             ScrollView {
                 
-                HistoryRowView(title: "Use current location", systemSymbolName: "location")
+                HistoryRowView(title: "Use current location", systemSymbolName: "location") {}
                 
                 ForEach(cities) { city in
                     Divider()
-                    HistoryRowView(title: "\(city.name)")
-                        .onTapGesture {
-                            withAnimation {
-                                onTapCity(city)
-                                dismiss()
-                            }
+                    HistoryRowView(title: "\(city.name)") {
+                        withAnimation {
+                            onTapCity(city)
+                            dismiss()
                         }
+                    }
+                       
                 }
             }.scrollIndicators(.hidden)
         }.padding(.horizontal)

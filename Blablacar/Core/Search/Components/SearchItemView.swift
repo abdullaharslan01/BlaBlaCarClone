@@ -12,10 +12,13 @@ struct SearchItemView: View {
     let symbolName: String?
     let labelColor: Color
     
-    init(title: Binding<String>, symbolName: String?, color: Color = Color.gray) {
+    let onTapGesture: () -> Void
+    
+    init(title: Binding<String>, symbolName: String?, color: Color = Color.gray, onTapGesture: @escaping () -> Void) {
         self._title = title
         self.symbolName = symbolName
         self.labelColor = color
+        self.onTapGesture = onTapGesture
     }
      
     var body: some View {
@@ -43,6 +46,12 @@ struct SearchItemView: View {
         .padding([.horizontal, .top])
         .frame(height: 55)
         .frame(maxWidth: .infinity, alignment: .leading)
+        .overlay {
+            Rectangle().opacity(0.001)
+                .onTapGesture {
+                    onTapGesture()
+                }
+        }
         
     }
 }

@@ -27,7 +27,9 @@ struct SearchView: View {
                     VStack {
                         ForEach(vm.historyJourneys) { journey in
                                                                                             
-                            HistoryRowView(title: journey.description())
+                            HistoryRowView(title: journey.description()) {
+                                
+                            }
                                                                                                 
                         }
                                             
@@ -91,43 +93,43 @@ extension SearchView {
     
     var locationPreferanceView: some View {
         VStack(spacing: 10) {
-            SearchItemView(title: $vm.currentJourneyBooking.journey.departure, symbolName: nil)
-                .onTapGesture {
-                    withAnimation {
-                        vm.isLeavingToScreenState.toggle()
-                    }
+            SearchItemView(title: $vm.currentJourneyBooking.journey.departure, symbolName: nil, onTapGesture: {
+                withAnimation {
+                    vm.isLeavingToScreenState.toggle()
                 }
-                .overlay(alignment: .trailing) {
-                    Image(systemName: "arrow.up.arrow.down")
-                        .padding(.trailing)
-                        .foregroundStyle(.primary0)
-                        .fontWeight(.light)
-                        .onTapGesture {
-                            withAnimation {
-                                vm.switchCities()
-                            }
+            })
+                 
+            .overlay(alignment: .trailing) {
+                Image(systemName: "arrow.up.arrow.down")
+                    .padding(.trailing)
+                    .foregroundStyle(.primary0)
+                    .fontWeight(.light)
+                    .onTapGesture {
+                        withAnimation {
+                            vm.switchCities()
                         }
-                }
+                    }
+            }
                                 
             Divider().padding(.horizontal)
                                
             SearchItemView(title: $vm.currentJourneyBooking.journey.destination, symbolName: nil)
-                .onTapGesture {
+                {
                     withAnimation {
                         vm.isGoingToScreenState.toggle()
                     }
                 }
             Divider().padding(.horizontal)
 
-            SearchItemView(title: $vm.currentJourneyBooking.dateDescription, symbolName: "calendar")
+            SearchItemView(title: $vm.currentJourneyBooking.dateDescription, symbolName: "calendar") {}
                 
             Divider().padding(.horizontal)
-            SearchItemView(title: $vm.currentJourneyBooking.numberOfSeatsDescription, symbolName: "person")
-                .onTapGesture {
-                    withAnimation {
-                        vm.isNumberOfSeatsToBookScreenState.toggle()
-                    }
+            SearchItemView(title: $vm.currentJourneyBooking.numberOfSeatsDescription, symbolName: "person") {
+                withAnimation {
+                    vm.isNumberOfSeatsToBookScreenState.toggle()
                 }
+            }
+          
             Button {} label: {
                 Text("Ara")
                     .foregroundStyle(.white)

@@ -11,14 +11,15 @@ struct HistoryRowView: View {
     
     let title: String
     let systemSymbolName: String
+    var onTapGesture: ()->()
     
-    init(title: String, systemSymbolName: String = "clock") {
+    init(title: String, systemSymbolName: String = "clock", onTapGesture: @escaping ()->()) {
         self.title = title
         self.systemSymbolName = systemSymbolName
+        self.onTapGesture = onTapGesture
     }
     var body: some View {
         HStack {
-            
             Image(systemName: systemSymbolName)
             Text(title)
                 .font(.callout)
@@ -30,5 +31,10 @@ struct HistoryRowView: View {
             
         }.padding(.top)
             .foregroundStyle(Color(.systemGray2))
+            .overlay {
+                Rectangle().opacity(0.01).onTapGesture {
+                    onTapGesture()
+                }
+            }
     }
 }
