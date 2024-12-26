@@ -15,6 +15,7 @@ struct ConstantStrigns {
         static let goingto = "Going to"
         static let today = "Today"
         static let numberOfSeatsToBook = "Number of seats to book"
+        static let selectCityTextViewInfo = "Example: Adana City or Gaziantep Castle"
     
     }
     

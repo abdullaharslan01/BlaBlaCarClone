@@ -5,6 +5,7 @@
 //  Created by abdullah on 25.12.2024.
 //
 
+import SwiftfulUI
 import SwiftUI
 
 struct SearchView: View {
@@ -25,50 +26,58 @@ struct SearchView: View {
                     
                     VStack {
                         ForEach(vm.historyJourneys) { journey in
-                                            
-                            HStack {
-                                                    
-                                Image(systemName: "clock")
-                                Text(journey.description())
-                                    .font(.callout)
-                                    .fontWeight(.medium)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .foregroundStyle(.white)
-                                Image(systemName: "chevron.right")
-                                                    
-                            }.padding(.top)
-                                .foregroundStyle(Color(.systemGray2))
-                                                
+                                                                                            
+                            HistoryRowView(title: journey.description())
+                                                                                                
                         }
-                    }.padding(.top, 20)
-                   
+                                            
+                    }
+                    .padding(.top, 20)
+                    .padding(.bottom, getSafeArea().bottom + 100)
+                        
                 }.padding(.top, getSafeArea().top + 15)
                     .padding(.horizontal, 20)
-                
+                    
             }
             
         }
+        .scrollIndicators(.hidden)
         .fullScreenCover(isPresented: $vm.isNumberOfSeatsToBookScreenState) {
             SelectSeatView(numberofSeatsToBook: $vm.currentJourneyBooking.numberOfSeatsToBook.wrappedValue) { selectedSeatNumber in
                 vm.changeNumberOfSeatsNumber(selectedSeatNumber)
             }
         }
+        .fullScreenCover(isPresented: $vm.isGoingToScreenState, content: {
+            SelectLocationView(selectedCity: $vm.currentJourneyBooking.journey.destination.wrappedValue, cities: vm.cityRecomendadations, onTapCity: { city in
+                
+                vm.changeGoingToCity(city)
+                
+            })
+        })
+        
+        .fullScreenCover(isPresented: $vm.isLeavingToScreenState, content: {
+            SelectLocationView(selectedCity: $vm.currentJourneyBooking.journey.departure.wrappedValue, cities: vm.cityRecomendadations, onTapCity: { city in
+                vm.changeLeavingCity(city)
+                        
+            })
+        })
         .ignoresSafeArea()
     }
 }
 
 extension SearchView {
     var bannerImage: some View {
-        Image(Images.Assets.appBanner)
+        Image("\(Images.Assets.appBanner)")
             .resizable()
             .scaledToFill()
             .containerRelativeFrame([.vertical, .horizontal]) { size, axis in
                 if axis == .horizontal {
                     size
                 } else {
-                    size * 0.5
+                    size * 0.8
                 }
-            }
+            }.ignoresSafeArea()
+            .asStretchyHeader(startingHeight: UIScreen.main.bounds.height * 0.5)
     }
     
     var titleText: some View {
@@ -82,22 +91,38 @@ extension SearchView {
     
     var locationPreferanceView: some View {
         VStack(spacing: 10) {
-            SearchItemView(title: $vm.currentJourneyBooking.journey.departure, symbolName: nil).overlay(alignment: .trailing) {
-                Image(systemName: "arrow.up.arrow.down")
-                    .padding(.trailing)
-                    .foregroundStyle(.primary0)
-                    .fontWeight(.light)
-            }
+            SearchItemView(title: $vm.currentJourneyBooking.journey.departure, symbolName: nil)
+                .onTapGesture {
+                    withAnimation {
+                        vm.isLeavingToScreenState.toggle()
+                    }
+                }
+                .overlay(alignment: .trailing) {
+                    Image(systemName: "arrow.up.arrow.down")
+                        .padding(.trailing)
+                        .foregroundStyle(.primary0)
+                        .fontWeight(.light)
+                        .onTapGesture {
+                            withAnimation {
+                                vm.switchCities()
+                            }
+                        }
+                }
                                 
             Divider().padding(.horizontal)
                                
             SearchItemView(title: $vm.currentJourneyBooking.journey.destination, symbolName: nil)
+                .onTapGesture {
+                    withAnimation {
+                        vm.isGoingToScreenState.toggle()
+                    }
+                }
             Divider().padding(.horizontal)
 
             SearchItemView(title: $vm.currentJourneyBooking.dateDescription, symbolName: "calendar")
                 
             Divider().padding(.horizontal)
-            SearchItemView(title: $vm.currentJourneyBooking.numberOfSeatsDescription , symbolName: "person")
+            SearchItemView(title: $vm.currentJourneyBooking.numberOfSeatsDescription, symbolName: "person")
                 .onTapGesture {
                     withAnimation {
                         vm.isNumberOfSeatsToBookScreenState.toggle()
@@ -119,5 +144,5 @@ extension SearchView {
 }
 
 #Preview {
-    SearchView()
+    MainTabbarView()
 }

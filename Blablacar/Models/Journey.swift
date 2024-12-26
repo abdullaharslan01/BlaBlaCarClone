@@ -15,6 +15,8 @@ struct Journey: Identifiable {
     func description() -> String {
         return "\(departure) -> \(destination)"
     }
+    
+    
 }
 
 // Example Data

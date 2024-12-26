@@ -10,6 +10,8 @@ import SwiftUI
 struct BCTabView: View {
     
     @Binding var selectedTab: Tab
+    
+    @Environment(\.colorScheme) var colorScheme
         
     @AppStorage("profileImage") var profilImageUrl: String = "profile"
     
@@ -28,6 +30,7 @@ struct BCTabView: View {
                 .fill(.gray.opacity(0.3))
                 .frame(height: 1)
         }.padding(.bottom, getSafeArea().bottom == 0 ? 5 : getSafeArea().bottom)
+            .background(colorScheme == .dark ? .black : .white)
             
     }
     

@@ -37,11 +37,12 @@ struct SearchItemView: View {
                 .font(.system(size: 14))
                 .foregroundStyle(labelColor)
                 .fontWeight(.bold)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 
         }
         .padding([.horizontal, .top])
         .frame(height: 55)
         .frame(maxWidth: .infinity, alignment: .leading)
-       
+        
     }
 }

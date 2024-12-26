@@ -34,6 +34,7 @@ struct MainTabbarView: View {
                 .tag(Tab.profile)
         }.overlay(alignment: .bottom) {
             BCTabView(selectedTab: $vm.selectedTab)
+                
         }.ignoresSafeArea(.all,edges: .bottom)
     }
 }

@@ -9,7 +9,12 @@ import SwiftUI
 
 struct PublishView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            ForEach(0..<20, id: \.self) { v in
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(height: 150)
+            }
+        }
     }
 }
 
