@@ -11,59 +11,80 @@ import SwiftUI
 struct SearchView: View {
     @State var vm = SearchViewModel()
     
+    @Binding var tabBarVisibility: Visibility
+    
     var body: some View {
-        ScrollView {
-            
-            ZStack(alignment: .top) {
-               
-                bannerImage
+        NavigationStack {
+            ScrollView {
                 
-                VStack {
+                ZStack(alignment: .top) {
                     
-                    titleText
-                    
-                    locationPreferanceView
+                    bannerImage
                     
                     VStack {
-                        ForEach(vm.historyJourneys) { journey in
-                                                                                            
-                            HistoryRowView(title: journey.description()) {
+                        
+                        titleText
+                        
+                        locationPreferanceView
+                        
+                        
+                        
+                        VStack {
+                            ForEach(vm.historyJourneys) { journey in
+                                
+                                HistoryRowView(title: journey.description()) {}
                                 
                             }
-                                                                                                
+                            
                         }
-                                            
-                    }
-                    .padding(.top, 20)
-                    .padding(.bottom, getSafeArea().bottom + 100)
+                        .padding(.top, 20)
+                        .padding(.bottom, getSafeArea().bottom + 100)
                         
-                }.padding(.top, getSafeArea().top + 15)
-                    .padding(.horizontal, 20)
+                    }.padding(.top, getSafeArea().top + 15)
+                        .padding(.horizontal, 20)
                     
+                }
+                
             }
+            .scrollIndicators(.hidden)
+            .onAppear(perform: {
+                tabBarVisibility = .visible
+            })
+            .fullScreenCover(isPresented: $vm.isNumberOfSeatsToBookScreenState) {
+                SelectSeatView(numberofSeatsToBook: $vm.currentJourneyBooking.numberOfSeatsToBook.wrappedValue) { selectedSeatNumber in
+                    vm.changeNumberOfSeatsNumber(selectedSeatNumber)
+                }
+            }
+            .fullScreenCover(isPresented: $vm.isGoingToScreenState, content: {
+                SelectLocationView(selectedCity: $vm.currentJourneyBooking.journey.destination.wrappedValue, cities: vm.cityRecomendadations, onTapCity: { city in
+                    
+                    vm.changeGoingToCity(city)
+                    
+                })
+            })
             
-        }
-        .scrollIndicators(.hidden)
-        .fullScreenCover(isPresented: $vm.isNumberOfSeatsToBookScreenState) {
-            SelectSeatView(numberofSeatsToBook: $vm.currentJourneyBooking.numberOfSeatsToBook.wrappedValue) { selectedSeatNumber in
-                vm.changeNumberOfSeatsNumber(selectedSeatNumber)
-            }
-        }
-        .fullScreenCover(isPresented: $vm.isGoingToScreenState, content: {
-            SelectLocationView(selectedCity: $vm.currentJourneyBooking.journey.destination.wrappedValue, cities: vm.cityRecomendadations, onTapCity: { city in
+            .fullScreenCover(isPresented: $vm.isDatePickerScreenState, content: {
                 
-                vm.changeGoingToCity(city)
+                SelectDateView(selectedDate: vm.currentJourneyBooking.date){ date in
+                    vm.changeCurrentDate(date)
+                    
+                }
                 
             })
-        })
-        
-        .fullScreenCover(isPresented: $vm.isLeavingToScreenState, content: {
-            SelectLocationView(selectedCity: $vm.currentJourneyBooking.journey.departure.wrappedValue, cities: vm.cityRecomendadations, onTapCity: { city in
-                vm.changeLeavingCity(city)
-                        
+            
+            .fullScreenCover(isPresented: $vm.isLeavingToScreenState, content: {
+                
+                
+                
+                SelectLocationView(selectedCity: $vm.currentJourneyBooking.journey.departure.wrappedValue, cities: vm.cityRecomendadations, onTapCity: { city in
+                    vm.changeLeavingCity(city)
+                    
+                })
+                
+                
             })
-        })
-        .ignoresSafeArea()
+            .ignoresSafeArea()
+        }
     }
 }
 
@@ -102,6 +123,7 @@ extension SearchView {
             .overlay(alignment: .trailing) {
                 Image(systemName: "arrow.up.arrow.down")
                     .padding(.trailing)
+                    .background(Color.black.opacity(0.005))
                     .foregroundStyle(.primary0)
                     .fontWeight(.light)
                     .onTapGesture {
@@ -121,7 +143,11 @@ extension SearchView {
                 }
             Divider().padding(.horizontal)
 
-            SearchItemView(title: $vm.currentJourneyBooking.dateDescription, symbolName: "calendar") {}
+            SearchItemView(title: $vm.currentJourneyBooking.dateDescription, symbolName: "calendar") {
+                withAnimation {
+                    vm.isDatePickerScreenState.toggle()
+                }
+            }
                 
             Divider().padding(.horizontal)
             SearchItemView(title: $vm.currentJourneyBooking.numberOfSeatsDescription, symbolName: "person") {
@@ -130,7 +156,10 @@ extension SearchView {
                 }
             }
           
-            Button {} label: {
+            NavigationLink {
+                SearchResultView(searchResults: vm.searchResultExample, tabbarVisibility: $tabBarVisibility)
+                    .navigationBarBackButtonHidden()
+            } label: {
                 Text("Ara")
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
@@ -142,6 +171,7 @@ extension SearchView {
         .background(Color(.systemGray5))
         .clipShape(.rect(cornerRadius: 16))
         .padding(.top, 80)
+        
     }
 }
 

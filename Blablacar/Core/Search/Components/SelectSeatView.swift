@@ -22,20 +22,9 @@ struct SelectSeatView: View {
     var body: some View {
         VStack {
             
-            VStack(alignment: .leading, spacing: 25) {
-                Image(systemName: "xmark")
-                    .foregroundStyle(.splash)
-                    .font(.title3)
-                    .onTapGesture {
-                       
-                        dismiss()
-                        
-                    }
-                
-                Text(ConstantStrigns.Search.numberOfSeatsToBook)
-                    .font(.title)
-                
-            }.frame(maxWidth: .infinity, alignment: .leading)
+            HeaderCloseView(title: ConstantStrigns.Search.numberOfSeatsToBook) {
+                dismiss()
+            }
             
             Spacer()
             

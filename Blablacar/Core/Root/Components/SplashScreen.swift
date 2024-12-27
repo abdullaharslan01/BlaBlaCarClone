@@ -40,7 +40,7 @@ struct SplashScreen: View {
             
         try? await Task.sleep(for: .seconds(2))
             
-        for i in 0 ..< 20 {
+        for i in 0 ..< 15 {
                 
             try? await Task.sleep(for: .seconds(i < 4 ? 0.15 : 0.04))
             withAnimation {

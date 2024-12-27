@@ -10,14 +10,16 @@ import Foundation
 @Observable
 class SearchViewModel {
     var historyJourneys = [Journey]()
-    
     var cityRecomendadations = [City]()
+    var searchResultExample = [SearchResult]()
+    
     
     var currentJourneyBooking: JourneyBooking = .init()
     
     var isNumberOfSeatsToBookScreenState = false
     var isGoingToScreenState = false
     var isLeavingToScreenState = false
+    var isDatePickerScreenState =  false
     
     var numberofseat = 1
     
@@ -26,6 +28,7 @@ class SearchViewModel {
     init() {
         loadHistoryJourneys()
         loadCityRecomendations()
+        loadSearchResults()
     }
     
     func changeNumberOfSeatsNumber(_ seat: Int) {
@@ -56,6 +59,14 @@ class SearchViewModel {
     
     func loadHistoryJourneys() {
         historyJourneys = service.exampleJourneys
+    }
+    
+    func changeCurrentDate(_ date: Date) {
+        currentJourneyBooking.date = date
+    }
+    
+    func loadSearchResults() {
+        searchResultExample = service.serchResultExamples
     }
     
     

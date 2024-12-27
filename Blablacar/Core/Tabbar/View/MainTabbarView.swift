@@ -9,16 +9,16 @@ import SwiftUI
 
 struct MainTabbarView: View {
     
-    init(){
+    init() {
         UITabBar.appearance().isHidden = true
     }
     
-    
     @State var vm = MainTabbarViewModel()
+    @State var tabbarVisibility: Visibility = .visible
     
     var body: some View {
         TabView(selection: $vm.selectedTab) {
-            SearchView()
+            SearchView(tabBarVisibility: $tabbarVisibility)
                 .tag(Tab.search)
             
             PublishView()
@@ -33,9 +33,12 @@ struct MainTabbarView: View {
             ProfileView()
                 .tag(Tab.profile)
         }.overlay(alignment: .bottom) {
-            BCTabView(selectedTab: $vm.selectedTab)
+            
+            if tabbarVisibility == .visible {
+                BCTabView(selectedTab: $vm.selectedTab)
+            }
                 
-        }.ignoresSafeArea(.all,edges: .bottom)
+        }.ignoresSafeArea(.all, edges: .bottom)
     }
 }
 
