@@ -31,7 +31,7 @@ struct BBImageProfileView: View {
                     .scaledToFill()
                     .frame(width: size.rawValue + 10, height: size.rawValue + 10)
                     .foregroundStyle(.circleImageBackground)
-                    .offset(x: 10)
+                    .offset(x: 6)
                    
                 
                 
@@ -40,5 +40,5 @@ struct BBImageProfileView: View {
 }
 
 #Preview {
-    BBImageProfileView(image: "profile", size: .l)
+    BBImageProfileView(image: "profile6", size: .s)
 }

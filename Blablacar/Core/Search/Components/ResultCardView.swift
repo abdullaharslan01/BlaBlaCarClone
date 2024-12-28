@@ -60,7 +60,7 @@ struct ResultCardView: View {
                 .frame(height: 0.3)
                 .padding(.vertical)
             
-            HStack(spacing: 15) {
+            HStack(spacing: 25) {
                 Image(systemName: "car.side")
              
                 BBImageProfileView(image: result.driverProfileImage, size: .s)
@@ -99,4 +99,8 @@ struct ResultCardView: View {
         }
         return "Time Error"
     }
+}
+
+#Preview {
+    ResultCardView(result: BlaBlaDataService.shared.searchResults[0])
 }

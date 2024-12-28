@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F506E7E82D207DD3004C5AD7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F506E7E72D207DD3004C5AD7 /* User.swift */; };
+		F506E88D2D2098B7004C5AD7 /* BlaBlaDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F506E88B2D2098B7004C5AD7 /* BlaBlaDataService.swift */; };
 		F51241C92D1F38B600E27EA7 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51241C82D1F38B600E27EA7 /* SearchResult.swift */; };
 		F59C48592D1C807000CB2720 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59C48582D1C807000CB2720 /* UIView+Ext.swift */; };
 		F5A580782D1DAF84007C8023 /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A580772D1DAF84007C8023 /* Journey.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F506E7E72D207DD3004C5AD7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F506E88B2D2098B7004C5AD7 /* BlaBlaDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlaBlaDataService.swift; sourceTree = "<group>"; };
 		F51241C82D1F38B600E27EA7 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		F59C48582D1C807000CB2720 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		F5A580772D1DAF84007C8023 /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
@@ -39,17 +43,22 @@
 		F5AE3A0B2D1C78A500351550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		F5A5807C2D1DAFA0007C8023 /* Exceptions for "Service" folder in "Blablacar" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				BlaBlaDataService.swift,
-			);
-			target = F5AE39B62D1C5F4E00351550 /* Blablacar */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		F506E7E02D207CAF004C5AD7 /* View */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = View;
+			sourceTree = "<group>";
+		};
+		F506E7E12D207CB0004C5AD7 /* ViewModel */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F506E7E22D207CB3004C5AD7 /* Component */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Component;
+			sourceTree = "<group>";
+		};
 		F59C485A2D1C85FE00CB2720 /* View */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = View;
@@ -78,14 +87,6 @@
 		F59C48632D1C869300CB2720 /* Components */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Components;
-			sourceTree = "<group>";
-		};
-		F5A580792D1DAF98007C8023 /* Service */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				F5A5807C2D1DAFA0007C8023 /* Exceptions for "Service" folder in "Blablacar" target */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		F5AE39EA2D1C6AAF00351550 /* ViewModel */ = {
@@ -142,6 +143,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F506E88C2D2098B7004C5AD7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F506E88B2D2098B7004C5AD7 /* BlaBlaDataService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		F5AE39AE2D1C5F4E00351550 = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +202,9 @@
 		F5AE39D92D1C6A8200351550 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				F506E7E22D207CB3004C5AD7 /* Component */,
+				F506E7E12D207CB0004C5AD7 /* ViewModel */,
+				F506E7E02D207CAF004C5AD7 /* View */,
 				F5AE39FB2D1C6B0600351550 /* ProfileView.swift */,
 			);
 			path = Profile;
@@ -258,6 +270,7 @@
 				F5A5807F2D1DB3CD007C8023 /* JourneyBooking.swift */,
 				F5A580C62D1DCFF0007C8023 /* City.swift */,
 				F51241C82D1F38B600E27EA7 /* SearchResult.swift */,
+				F506E7E72D207DD3004C5AD7 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -273,7 +286,7 @@
 		F5AE39E32D1C6A8200351550 /* Blablacar */ = {
 			isa = PBXGroup;
 			children = (
-				F5A580792D1DAF98007C8023 /* Service */,
+				F506E88C2D2098B7004C5AD7 /* Service */,
 				F5AE3A0B2D1C78A500351550 /* Info.plist */,
 				F5AE39D42D1C6A8200351550 /* App */,
 				F5AE39DD2D1C6A8200351550 /* Core */,
@@ -321,6 +334,9 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				F506E7E02D207CAF004C5AD7 /* View */,
+				F506E7E12D207CB0004C5AD7 /* ViewModel */,
+				F506E7E22D207CB3004C5AD7 /* Component */,
 				F59C485A2D1C85FE00CB2720 /* View */,
 				F59C485B2D1C860500CB2720 /* Components */,
 				F59C485C2D1C860C00CB2720 /* ViewModel */,
@@ -406,6 +422,8 @@
 				F5AE39E42D1C6A8200351550 /* BlablacarApp.swift in Sources */,
 				F5AE39FA2D1C6B0100351550 /* InboxView.swift in Sources */,
 				F5A580802D1DB3CD007C8023 /* JourneyBooking.swift in Sources */,
+				F506E88D2D2098B7004C5AD7 /* BlaBlaDataService.swift in Sources */,
+				F506E7E82D207DD3004C5AD7 /* User.swift in Sources */,
 				F51241C92D1F38B600E27EA7 /* SearchResult.swift in Sources */,
 				F5A580C72D1DCFF0007C8023 /* City.swift in Sources */,
 			);

@@ -66,7 +66,7 @@ class SearchViewModel {
     }
     
     func loadSearchResults() {
-        searchResultExample = service.serchResultExamples
+        searchResultExample = service.searchResults
     }
     
     

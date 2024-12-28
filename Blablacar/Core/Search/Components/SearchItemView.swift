@@ -27,18 +27,18 @@ struct SearchItemView: View {
             ZStack {
                 if let symbolName {
                     Image(systemName: symbolName)
-                        .foregroundStyle(Color.gray)
+                        .foregroundStyle(Color.subTitle)
                         
                 } else {
                     Circle()
-                        .stroke(Color.gray, lineWidth: 4)
+                        .stroke(Color.subTitle, lineWidth: 4)
                         .frame(width: 15, height: 15)
                 }
             }
             
             Text("\(title)")
                 .font(.system(size: 14))
-                .foregroundStyle(labelColor)
+                .foregroundStyle(Color.title)
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 

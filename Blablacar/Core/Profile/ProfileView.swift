@@ -53,8 +53,9 @@ struct ProfileView: View {
                 else {
                     ScrollView {
                         accountSectionView
+                            .padding(.bottom, getSafeArea().bottom + 50)
                     }.transition(.move(edge: .trailing))
-                        .padding(.bottom, getSafeArea().bottom + 80)
+                        
                 }
             }
             

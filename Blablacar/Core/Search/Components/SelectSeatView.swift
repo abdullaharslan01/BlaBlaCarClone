@@ -29,7 +29,7 @@ struct SelectSeatView: View {
             Spacer()
             
             HStack {
-                InteractionButton(symbolName: "minus.circle") {
+                InteractionButton(symbolName: "minus.circle", isDisable: numberofSeatsToBook == 1) {
                     if numberofSeatsToBook != 1 {
                         numberofSeatsToBook -= 1
                     }

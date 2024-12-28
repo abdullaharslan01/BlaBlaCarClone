@@ -54,9 +54,6 @@ struct SearchResultView: View {
     }
 }
 
-#Preview {
-    SearchResultView(searchResults: BlaBlaDataService.shared.serchResultExamples, tabbarVisibility: .constant(.hidden))
-}
 
 struct SearchResultHeaderView: View {
 
