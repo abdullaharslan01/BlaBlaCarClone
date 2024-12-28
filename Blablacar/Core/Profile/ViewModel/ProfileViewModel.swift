@@ -9,7 +9,7 @@ import Foundation
 
 @Observable
 class ProfileViewModel {
-    var selectedOption: ProfileSectionOption = .account
+    var selectedOption: ProfileSectionOption = .about
     
     var currentUser: User = BlaBlaDataService.shared.currentUser
     

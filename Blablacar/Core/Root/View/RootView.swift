@@ -14,7 +14,6 @@ struct RootView: View {
         ZStack {
             if vm.isSplashScreenCompleted {
                 MainTabbarView()
-                    .transition(.opacity)
             } else {
                 SplashScreen(isSplashcompleted: $vm.isSplashScreenCompleted)
             }
