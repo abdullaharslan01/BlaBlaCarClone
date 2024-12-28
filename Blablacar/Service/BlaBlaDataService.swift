@@ -100,4 +100,8 @@ class BlaBlaDataService {
         City(name: "Bursa"),
     ]
     
+    
+    
+    let currentUser = User(name: "Abdullah", email: "abdullaharslan1473@gmail.com", phoneNumber: "+905368888888", about: "Life is a journey, not a destination.", blaBlaCarAmbassador: .ambassadorState, isVerifiedIdState: .verified, isVerifiedEmail: true, isVerifiedPhoneNumber: true, profileImageURL: "profile")
+    
 }

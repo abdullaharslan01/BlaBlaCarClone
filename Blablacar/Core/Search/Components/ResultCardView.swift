@@ -62,20 +62,8 @@ struct ResultCardView: View {
             
             HStack(spacing: 15) {
                 Image(systemName: "car.side")
-                Image(result.driverProfileImage)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 45, height: 45)
-                    .clipShape(Circle())
-                    .overlay {
-                        Circle()
-                            .stroke(.circleImageBackground.opacity(0.8), lineWidth: 3)
-                            .overlay(alignment: .bottomTrailing) {
-                                Image(systemName: "checkmark.seal.fill")
-                                    .foregroundStyle(.circleImageBackground)
-                                    .offset(x: 5, y: 5)
-                            }
-                    }
+             
+                BBImageProfileView(image: result.driverProfileImage, size: .s)
                 
                 VStack(alignment: .leading) {
                     Text(result.driverName)

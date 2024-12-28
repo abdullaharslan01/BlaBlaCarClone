@@ -26,7 +26,7 @@ struct CityRecomendataionView: View {
                 .fontWeight(.medium)
                 .padding(.leading, 5)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .foregroundStyle(Color(.label))
+                .foregroundStyle(.title)
             Image(systemName: "chevron.right")
             
         }.padding(.top)
