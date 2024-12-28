@@ -32,7 +32,7 @@ struct SearchView: View {
                         VStack {
                             ForEach(vm.historyJourneys) { journey in
                                 
-                                HistoryRowView(title: journey.description()) {}
+                                CityRecomendataionView(title: journey.description()) {}
                                 
                             }
                             

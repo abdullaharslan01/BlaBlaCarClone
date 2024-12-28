@@ -33,6 +33,39 @@ class BlaBlaDataService {
         SearchResult(
             departure: "Adana",
             destination: "Gaziantep",
+            departureTime: "09:00",
+            arrivalTime: "12:30",
+            driverName: "Ahmet Yılmaz",
+            driverRating: 4.8,
+            driverProfileImage: "profile2",
+            price: 200.0,
+            isFull: false
+        ),
+        SearchResult(
+            departure: "Adana",
+            destination: "Gaziantep",
+            departureTime: "09:00",
+            arrivalTime: "12:30",
+            driverName: "Ahmet Yılmaz",
+            driverRating: 4.8,
+            driverProfileImage: "profile2",
+            price: 200.0,
+            isFull: false
+        ),
+        SearchResult(
+            departure: "Adana",
+            destination: "Gaziantep",
+            departureTime: "09:00",
+            arrivalTime: "12:30",
+            driverName: "Ahmet Yılmaz",
+            driverRating: 4.8,
+            driverProfileImage: "profile2",
+            price: 200.0,
+            isFull: false
+        ),
+        SearchResult(
+            departure: "Adana",
+            destination: "Gaziantep",
             departureTime: "11:00",
             arrivalTime: "14:15",
             driverName: "Mehmet Kaya",
@@ -62,16 +95,9 @@ class BlaBlaDataService {
         City(name: "Mersin"),
         City(name: "Akdeniz/Mersin"),
         City(name: "İstanbul"),
-        City(name: "Kadıköy/İstanbul"),
-        City(name: "Beyoğlu/İstanbul"),
         City(name: "Ankara"),
-        City(name: "Çankaya/Ankara"),
-        City(name: "Mamak/Ankara"),
-        City(name: "İzmir"),
         City(name: "Konak/İzmir"),
-        City(name: "Karşıyaka/İzmir"),
         City(name: "Bursa"),
-        City(name: "Osmangazi/Bursa")
     ]
     
 }

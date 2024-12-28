@@ -16,7 +16,6 @@
 		F5AE39E42D1C6A8200351550 /* BlablacarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE39D32D1C6A8200351550 /* BlablacarApp.swift */; };
 		F5AE39E62D1C6A8200351550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5AE39D52D1C6A8200351550 /* Assets.xcassets */; };
 		F5AE39E72D1C6A8200351550 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5AE39E02D1C6A8200351550 /* Preview Assets.xcassets */; };
-		F5AE39F62D1C6AF500351550 /* PublishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE39F52D1C6AF500351550 /* PublishView.swift */; };
 		F5AE39F82D1C6AFB00351550 /* RidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE39F72D1C6AFB00351550 /* RidesView.swift */; };
 		F5AE39FA2D1C6B0100351550 /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE39F92D1C6B0100351550 /* InboxView.swift */; };
 		F5AE39FC2D1C6B0600351550 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE39FB2D1C6B0600351550 /* ProfileView.swift */; };
@@ -33,7 +32,6 @@
 		F5AE39D32D1C6A8200351550 /* BlablacarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlablacarApp.swift; sourceTree = "<group>"; };
 		F5AE39D52D1C6A8200351550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5AE39E02D1C6A8200351550 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F5AE39F52D1C6AF500351550 /* PublishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishView.swift; sourceTree = "<group>"; };
 		F5AE39F72D1C6AFB00351550 /* RidesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidesView.swift; sourceTree = "<group>"; };
 		F5AE39F92D1C6B0100351550 /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
 		F5AE39FB2D1C6B0600351550 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -115,6 +113,21 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		F5C7B3AF2D203CE800A361C9 /* View */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = View;
+			sourceTree = "<group>";
+		};
+		F5C7B3B02D203CEB00A361C9 /* ViewModel */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F5C7B3B12D203CEE00A361C9 /* Components */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +201,9 @@
 		F5AE39DA2D1C6A8200351550 /* Publish */ = {
 			isa = PBXGroup;
 			children = (
-				F5AE39F52D1C6AF500351550 /* PublishView.swift */,
+				F5C7B3B12D203CEE00A361C9 /* Components */,
+				F5C7B3B02D203CEB00A361C9 /* ViewModel */,
+				F5C7B3AF2D203CE800A361C9 /* View */,
 			);
 			path = Publish;
 			sourceTree = "<group>";
@@ -317,6 +332,9 @@
 				F5AE39EE2D1C6ACE00351550 /* Comman */,
 				F5AE39FD2D1C6B9100351550 /* Enums */,
 				F5AE3A022D1C71D300351550 /* Components */,
+				F5C7B3AF2D203CE800A361C9 /* View */,
+				F5C7B3B02D203CEB00A361C9 /* ViewModel */,
+				F5C7B3B12D203CEE00A361C9 /* Components */,
 			);
 			name = Blablacar;
 			packageProductDependencies = (
@@ -386,7 +404,6 @@
 				F5AE3A062D1C749D00351550 /* Tab.swift in Sources */,
 				F5AE39F82D1C6AFB00351550 /* RidesView.swift in Sources */,
 				F5AE39E42D1C6A8200351550 /* BlablacarApp.swift in Sources */,
-				F5AE39F62D1C6AF500351550 /* PublishView.swift in Sources */,
 				F5AE39FA2D1C6B0100351550 /* InboxView.swift in Sources */,
 				F5A580802D1DB3CD007C8023 /* JourneyBooking.swift in Sources */,
 				F51241C92D1F38B600E27EA7 /* SearchResult.swift in Sources */,

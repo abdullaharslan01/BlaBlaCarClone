@@ -56,11 +56,11 @@ struct SelectLocationView: View {
             }.padding([.top,.bottom])
             ScrollView {
                 
-                HistoryRowView(title: "Use current location", systemSymbolName: "location") {}
+                CityRecomendataionView(title: "Use current location", systemSymbolName: "location") {}
                 
                 ForEach(cities) { city in
                     Divider()
-                    HistoryRowView(title: "\(city.name)") {
+                    CityRecomendataionView(title: "\(city.name)") {
                         withAnimation {
                             onTapCity(city)
                             dismiss()

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HistoryRowView: View {
+struct CityRecomendataionView: View {
     
     let title: String
     let systemSymbolName: String
